@@ -1,0 +1,31 @@
+<h1>Listing foosers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @foosers.each do |fooser| %>
+      <tr>
+        <td><%= fooser.name %></td>
+        <td><%= fooser.email %></td>
+        <td><%= fooser.gender %></td>
+        <td><%= link_to 'Show', fooser %></td>
+        <td><%= link_to 'Edit', edit_fooser_path(fooser) %></td>
+        <td><%= link_to 'Destroy', fooser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fooser', new_fooser_path %>
